@@ -1,0 +1,17 @@
+{
+  "name": "nightwatch-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^8.10.0",
+    "chromedriver": "^108.0.0",
+    "nightwatch": "^2.6.9"
+  }
+}
