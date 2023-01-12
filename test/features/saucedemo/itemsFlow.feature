@@ -3,6 +3,7 @@ Background: Some registered user
   Given I open the Saucedemo
   Then the title is "Swag Labs"
 
+
 Scenario: Standard user add an item to cart
   Given I complete the "standard_user"
   And User "standard_user" is logged in
@@ -19,6 +20,7 @@ Scenario: Standard user add an item to cart
   And I review the product
   When I confirme the purchase
   Then Item can be purchased
+
 
 Scenario: Standard user remove an item from the cart
   Given I complete the "standard_user"

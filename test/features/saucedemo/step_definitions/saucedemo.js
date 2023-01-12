@@ -1,6 +1,6 @@
 const {Given, Then, When, Before} = require('@cucumber/cucumber');
 
-//Login 
+//Login  
 
 Given(/^I open the Saucedemo$/, function() {
   return browser
@@ -16,9 +16,9 @@ Then(/^the title is "([^"]*)"$/, function(title) {
 
 When(/^I complete the "([^"]*)"$/, function(user) {
   browser
-  .setValue('input[data-test=username]',user)
-  .setValue('input[data-test=password]',"secret_sauce")
-  .click('input[data-test=login-button]')
+  .setValue('@inputUser',user)
+  .setValue('@inputPassword',"secret_sauce")
+  .click('@loginBUtton')
 
 })
 
