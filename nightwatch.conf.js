@@ -2,13 +2,14 @@
 // https://nightwatchjs.org/gettingstarted/configuration/
 //
 
+
 module.exports = {
   // An array of folders (excluding subfolders) where your tests are located;
   // if this is not specified, the test source must be passed as the second argument to the test runner.
   src_folders: ['test'],
 
   // See https://nightwatchjs.org/guide/concepts/page-object-model.html
-  page_objects_path: ['./pageObjects'],
+  page_objects_path: './pageObjects',
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/adding-custom-commands.html
   custom_commands_path: [],
@@ -31,7 +32,7 @@ module.exports = {
   test_settings: {
     default: {
       disable_error_log: false,
-      launch_url: 'http://localhost',
+      launch_url: '',
 
       screenshots: {
         enabled: false,
