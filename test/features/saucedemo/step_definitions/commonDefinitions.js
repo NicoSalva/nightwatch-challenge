@@ -1,4 +1,4 @@
-const { Given, Then, When, Before } = require("@cucumber/cucumber");
+const { Given, Then, When } = require("@cucumber/cucumber");
 const password = require("../../../../credential.json");
 
 Given(/^I open the Saucedemo$/, () => {
