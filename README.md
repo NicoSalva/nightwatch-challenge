@@ -17,4 +17,4 @@
 
 Manually:
 
-            npm run test test/features/saucedemo
+            npm run test
