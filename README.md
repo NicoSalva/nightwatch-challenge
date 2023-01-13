@@ -11,7 +11,7 @@
 2. Goto nightwatch-challenge : _cd nightwatch-challenge_
 3. git clone the repository : git clone https://github.com/NicoSalva/nightwatch-challenge.git
 4. Once you have project cloned locally, goto project : _cd nightwatch-challenge_
-5. Install all the dependencies : _npm install_
+5. Install all the dependencies : _npm install --legacy-peer-dps_
 
 **Running Suite**:
 

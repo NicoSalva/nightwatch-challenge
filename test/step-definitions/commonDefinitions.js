@@ -1,5 +1,5 @@
 const { Given, Then, When } = require("@cucumber/cucumber");
-const password = require("../../../../credential.json");
+const password = require("../../credential.json");
 
 Given(/^I open the Saucedemo$/, () => {
   let saucedemo = browser.page.saucedemo();
