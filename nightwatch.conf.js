@@ -46,7 +46,7 @@ module.exports = {
       
       webdriver: {
         start_process: true,
-        server_path: ''
+        server_path: '',
       },
       
       test_runner: {
@@ -88,7 +88,7 @@ module.exports = {
 
       webdriver: {
         start_process: true,
-        server_path: '',
+        server_path: './node_modules/.bin/chromedriver',
         cli_args: [
           // --verbose
         ]

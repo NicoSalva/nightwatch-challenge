@@ -5,7 +5,7 @@ Background: Some registered user
 
 @standard_user @regression
 Scenario: Standard user add an item to cart
- Given I complete the "standard_user"
+Given I complete the "standard_user"
   And User "standard_user" is logged in
   When I add an item to the cart
   Then Item can be added to cart
@@ -55,10 +55,9 @@ Scenario: Problem user remove an item from the cart
   And I add an item to the cart
   And Item can be added to cart
   And I start the purchase
-  And I complete my information "problem_user"
-  And I review the product
-  When I confirme the purchase
-  Then Item can be purchased
+  When "problem_user" have problems when complete data
+  Then the item cannot purchased
+  
 
 
 

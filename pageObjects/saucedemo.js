@@ -91,9 +91,16 @@ module.exports = {
         backToProduct: {
             selector: 'button[data-test=back-to-products]'
 
+        },
+
+        errorAlert: {
+            selector: 'button[class=error-button]'
+
+        },
+
+        errorAlertMessage: {
+            selector: 'h3[data-test=error]'
         }
-
-
 
     }
 }

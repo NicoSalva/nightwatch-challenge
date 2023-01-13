@@ -21,7 +21,7 @@ When(/^I complete the "([^"]*)"/, function(user) {
 
   saucedemo
   .setValue('@inputUser',user)
-  .setValue('@inputPassword',"secret_sauce")
+  .setValue('@inputPassword', "secret_sauce")
   .click('@loginButton')
 
 })
@@ -85,8 +85,6 @@ Then(/^User "([^"]*)" is logged in$/, function(user) {
 
     let lastName = 'lastName'
     let zipCode = '12345'
-
-    
   
     saucedemo
     .assert.textContains('@headerTitle','CHECKOUT: YOUR INFORMATION')
@@ -95,14 +93,16 @@ Then(/^User "([^"]*)" is logged in$/, function(user) {
     .setValue('@lastNameForm',lastName)
     .setValue('@zipCodeForm',zipCode)
 
-    saucedemo.assert.valueEquals('@firstNameForm',String(user))
-    saucedemo.assert.valueEquals('@lastNameForm',String(lastName))
-    saucedemo.assert.valueEquals('@zipCodeForm',String(zipCode))
+    
+    .assert.valueEquals('@firstNameForm',String(user))
+    .assert.valueEquals('@lastNameForm',String(lastName))
+    .assert.valueEquals('@zipCodeForm',String(zipCode))
     
 
-    saucedemo.expect.element('@firstNameForm').to.be.visible
-    saucedemo.expect.element('@lastNameForm').to.be.visible
-    saucedemo.expect.element('@zipCodeForm').to.be.visible
+    
+    .expect.element('@firstNameForm').to.be.visible
+    .expect.element('@lastNameForm').to.be.visible
+    .expect.element('@zipCodeForm').to.be.visible
 
 
     .click('@confirmForm')
@@ -163,3 +163,40 @@ Then(/^User "([^"]*)" is logged in$/, function(user) {
     .waitForElementVisible('button[data-test=checkout]')
   
    })
+
+   Given(/^"([^"]*)" have problems when complete data$/, function(user) {
+    
+    let saucedemo = browser.page.saucedemo()
+    let lastName = 'lastName'
+    let zipCode = '12345'
+  
+    saucedemo
+    .assert.textContains('@headerTitle','CHECKOUT: YOUR INFORMATION')
+    
+    .setValue('@firstNameForm',user)
+    .setValue('@lastNameForm',lastName)
+    .setValue('@zipCodeForm',zipCode)
+    
+    
+    .assert.not.textContains('@firstNameForm', String(user))
+    
+    
+    .click('@confirmForm')
+    
+    
+    .waitForElementVisible('@errorAlert')
+    
+    .assert.textContains('@errorAlertMessage', 'Error: Last Name is required')
+
+    
+   })
+
+   Then(/^the item cannot purchased$/, () => {
+    let saucedemo = browser.page.saucedemo()
+    
+    saucedemo
+    .waitForElementVisible('@errorAlert')
+  
+   })
+
+   //
